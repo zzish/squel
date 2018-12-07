@@ -899,6 +899,8 @@ declare namespace squel {
     outer_join(name: string | BaseBuilder, alias?: string, condition?: string | Expression): this;
 
     cross_join(name: string | BaseBuilder, alias?: string, condition?: string | Expression): this;
+
+    full_join(name: string | BaseBuilder, alias?: string, condition?: string | Expression): this;
   }
 
   interface JoinMixin {
@@ -946,6 +948,16 @@ declare namespace squel {
      * @param condition A joining ON condition. Default is `null`.
      */
     cross_join(name: string | BaseBuilder, alias?: string, condition?: string | Expression): this;
+
+      /**
+     * Add a FULL JOIN.
+     *
+     * @param name The table to join on. Can be a a [[cls.BaseBuilder]] instance.
+     * @param alias An alias by which to refer to this table. Default is `null`.
+     * @param condition A joining ON condition. Default is `null`.
+     */
+    full_join(name: string | BaseBuilder, alias?: string, condition?: string | Expression): this;
+
   }
 
   interface Union {
